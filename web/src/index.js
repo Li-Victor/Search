@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import App from './App';
+import SearchBox from './SearchBox';
 import * as serviceWorker from './serviceWorker';
 import { ColorsProvider } from './Colors';
 
@@ -19,7 +19,7 @@ ReactDOM.render(
     <CssBaseline />
     <MuiThemeProvider theme={theme}>
       <ColorsProvider>
-        <App />
+        <SearchBox />
       </ColorsProvider>
     </MuiThemeProvider>
   </React.Fragment>,

@@ -6,24 +6,24 @@ export const ColorsContext = React.createContext();
 export class ColorsProvider extends React.Component {
   state = {
     query: '',
-    colors: crayola
+    results: crayola
   };
 
   render() {
-    const { query, colors } = this.state;
+    const { query, results } = this.state;
     return (
       <ColorsContext.Provider
         value={{
           query,
-          colors,
+          results,
           updateQuery: newValue => {
             this.setState(() => ({
               query: newValue
             }));
           },
-          searchColors: () => {
+          search: () => {
             this.setState(prevState => ({
-              colors: crayola.filter(color => color.name.toLowerCase().includes(prevState.query.toLowerCase()))
+              results: crayola.filter(color => color.name.toLowerCase().includes(prevState.query.toLowerCase()))
             }));
           }
         }}

@@ -1,21 +1,17 @@
 import React from 'react';
 import SearchInput from './SearchInput';
-import ColorList from './ColorResult';
+import ColorResult from './ColorResult';
 
 import { ColorsContext } from './Colors';
 
 const App = () => (
   <ColorsContext.Consumer>
     {({
-      query, colors, updateQuery, searchColors
+      query, results, updateQuery, search
     }) => (
       <React.Fragment>
-        <SearchInput
-          query={query}
-          updateQuery={updateQuery}
-          searchColors={searchColors}
-        />
-        <ColorList colors={colors} />
+        <SearchInput query={query} updateQuery={updateQuery} search={search} />
+        <ColorResult results={results} />
       </React.Fragment>
     )}
   </ColorsContext.Consumer>

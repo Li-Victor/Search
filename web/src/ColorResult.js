@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 
 class ColorResult extends React.PureComponent {
   render() {
-    const { colors } = this.props;
-    const listItems = colors.map(color => (
+    const { results } = this.props;
+    const listItems = results.map(color => (
       <ListItem
         key={`color-${color.hex}`}
         style={{ backgroundColor: color.hex }}
@@ -22,7 +22,7 @@ class ColorResult extends React.PureComponent {
 
 export default ColorResult;
 ColorResult.propTypes = {
-  colors: PropTypes.arrayOf(
+  results: PropTypes.arrayOf(
     PropTypes.shape({
       color: PropTypes.string,
       hex: PropTypes.string,
