@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import 'typeface-roboto';
 
+import ColorListItem from './ColorListItem';
 import SearchBox from './SearchBox';
 import * as serviceWorker from './serviceWorker';
 import { ColorsProvider } from './Colors';
@@ -14,12 +16,14 @@ const theme = createMuiTheme({
   }
 });
 
+const ColorSearchBox = SearchBox(ColorListItem);
+
 ReactDOM.render(
   <React.Fragment>
     <CssBaseline />
     <MuiThemeProvider theme={theme}>
       <ColorsProvider>
-        <SearchBox />
+        <ColorSearchBox />
       </ColorsProvider>
     </MuiThemeProvider>
   </React.Fragment>,

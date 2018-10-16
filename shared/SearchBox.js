@@ -6,9 +6,7 @@ import { ColorsContext } from './Colors';
 
 const SearchBox = ListItem => () => (
   <ColorsContext.Consumer>
-    {({
-      query, results, updateQuery, search
-    }) => (
+    {({ query, results, updateQuery, search }) => (
       <React.Fragment>
         <SearchInput query={query} updateQuery={updateQuery} search={search} />
         <SearchResult ListItem={ListItem} results={results} />
