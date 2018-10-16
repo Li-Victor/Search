@@ -4,11 +4,15 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import PropTypes from 'prop-types';
 
-class ColorList extends React.PureComponent {
+class ColorResult extends React.PureComponent {
   render() {
     const { colors } = this.props;
     const listItems = colors.map(color => (
-      <ListItem key={`color-${color.hex}`} style={{ backgroundColor: color.hex }} divider>
+      <ListItem
+        key={`color-${color.hex}`}
+        style={{ backgroundColor: color.hex }}
+        divider
+      >
         <ListItemText primary={`${color.name}`} />
       </ListItem>
     ));
@@ -16,8 +20,8 @@ class ColorList extends React.PureComponent {
   }
 }
 
-export default ColorList;
-ColorList.propTypes = {
+export default ColorResult;
+ColorResult.propTypes = {
   colors: PropTypes.arrayOf(
     PropTypes.shape({
       color: PropTypes.string,

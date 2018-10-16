@@ -1,10 +1,8 @@
 import React from 'react';
-import Input from '@material-ui/core/Input';
-import ColorList from './ColorList';
+import SearchInput from './SearchInput';
+import ColorList from './ColorResult';
 
 import { ColorsContext } from './Colors';
-
-const ENTER_KEY = 13;
 
 const App = () => (
   <ColorsContext.Consumer>
@@ -12,19 +10,10 @@ const App = () => (
       query, colors, updateQuery, searchColors
     }) => (
       <React.Fragment>
-        <Input
-          placeholder="Search..."
-          fullWidth
-          value={query}
-          onChange={event => {
-            updateQuery(event.target.value);
-          }}
-          onKeyDown={event => {
-            if (event.keyCode === ENTER_KEY) {
-              event.preventDefault();
-              searchColors();
-            }
-          }}
+        <SearchInput
+          query={query}
+          updateQuery={updateQuery}
+          searchColors={searchColors}
         />
         <ColorList colors={colors} />
       </React.Fragment>
