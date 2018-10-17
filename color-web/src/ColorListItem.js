@@ -11,7 +11,7 @@ const ColorListItem = ({ result }) => (
 
 ColorListItem.propTypes = {
   result: PropTypes.shape({
-    color: PropTypes.string,
+    name: PropTypes.string,
     hex: PropTypes.string,
     rgb: PropTypes.string
   }).isRequired

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import crayola from './crayola.json';
 
 export const ColorsContext = React.createContext();
@@ -6,29 +7,42 @@ export const ColorsContext = React.createContext();
 export class ColorsProvider extends React.Component {
   state = {
     query: '',
-    colors: crayola
+    results: crayola
+  };
+
+  static propTypes = {
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
+    ]).isRequired
   };
 
   render() {
-    const { query, colors } = this.state;
+    const { query, results } = this.state;
+    const { children } = this.props;
     return (
       <ColorsContext.Provider
         value={{
           query,
-          colors,
+          results,
           updateQuery: newValue => {
             this.setState(() => ({
               query: newValue
             }));
           },
-          searchColors: () => {
-            this.setState(prevState => ({
-              colors: crayola.filter(color => color.name.toLowerCase().includes(prevState.query.toLowerCase()))
-            }));
+          search: (done = () => {}) => {
+            this.setState(
+              prevState => ({
+                results: crayola.filter(color => color.name
+                  .toLowerCase()
+                  .includes(prevState.query.toLowerCase()))
+              }),
+              done()
+            );
           }
         }}
       >
-        {this.props.children}
+        {children}
       </ColorsContext.Provider>
     );
   }
