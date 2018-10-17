@@ -5,9 +5,9 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import 'typeface-roboto';
 import * as serviceWorker from './serviceWorker';
 
-import SearchBox from './SearchBox';
+import WebSearchBox from './WebSearchBox';
 import RepoListItem from './RepoListItem';
-import { GithubProvider } from './Github';
+import { GithubProvider, GithubContext } from './Github';
 
 const theme = createMuiTheme({
   typography: {
@@ -16,7 +16,7 @@ const theme = createMuiTheme({
   }
 });
 
-const RepoSearchBox = SearchBox(RepoListItem);
+const RepoSearchBox = WebSearchBox(GithubContext, RepoListItem);
 
 ReactDOM.render(
   <React.Fragment>

@@ -29,7 +29,7 @@ export class GithubProvider extends React.Component {
               query: newValue
             }));
           },
-          search: (callback = () => {}) => {
+          search: (done = () => {}, error = () => {}) => {
             fetch(`https://api.github.com/search/repositories?q=${query}`)
               .then(response => response.json())
               .then(response => {
@@ -40,13 +40,14 @@ export class GithubProvider extends React.Component {
                     () => ({
                       results: items
                     }),
-                    () => {
-                      callback();
-                    }
+                    done()
                   );
                 } else {
                   console.log('Something went wrong with the request');
                 }
+              })
+              .catch(() => {
+                error();
               });
           }
         }}

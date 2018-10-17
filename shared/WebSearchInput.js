@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const ENTER_KEY = 13;
 
-const SearchInput = ({ query, updateQuery, search }) => (
+const WebSearchInput = ({ query, updateQuery, search }) => (
   <Input
     placeholder="Search..."
     fullWidth
@@ -15,17 +15,15 @@ const SearchInput = ({ query, updateQuery, search }) => (
     onKeyDown={event => {
       if (event.keyCode === ENTER_KEY) {
         event.preventDefault();
-        search(() => {
-          console.log('done searching');
-        });
+        search();
       }
     }}
   />
 );
 
-SearchInput.propTypes = {
+WebSearchInput.propTypes = {
   query: PropTypes.string.isRequired,
   updateQuery: PropTypes.func.isRequired,
   search: PropTypes.func.isRequired
 };
-export default SearchInput;
+export default WebSearchInput;

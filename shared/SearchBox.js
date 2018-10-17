@@ -1,18 +1,14 @@
 import React from 'react';
-import SearchInput from './SearchInput';
-import SearchResult from './SearchResult';
 
-import { ColorsContext } from './Colors';
-
-const SearchBox = ListItem => () => (
-  <ColorsContext.Consumer>
+const SearchBox = (Context, SearchFrame, SearchInput, SearchResult) => () => (
+  <Context.Consumer>
     {({ query, results, updateQuery, search }) => (
-      <React.Fragment>
+      <SearchFrame>
         <SearchInput query={query} updateQuery={updateQuery} search={search} />
-        <SearchResult ListItem={ListItem} results={results} />
-      </React.Fragment>
+        <SearchResult results={results} />
+      </SearchFrame>
     )}
-  </ColorsContext.Consumer>
+  </Context.Consumer>
 );
 
 export default SearchBox;

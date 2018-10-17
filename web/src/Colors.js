@@ -30,10 +30,15 @@ export class ColorsProvider extends React.Component {
               query: newValue
             }));
           },
-          search: () => {
-            this.setState(prevState => ({
-              results: crayola.filter(color => color.name.toLowerCase().includes(prevState.query.toLowerCase()))
-            }));
+          search: (done = () => {}) => {
+            this.setState(
+              prevState => ({
+                results: crayola.filter(color => color.name
+                  .toLowerCase()
+                  .includes(prevState.query.toLowerCase()))
+              }),
+              done()
+            );
           }
         }}
       >

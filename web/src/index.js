@@ -5,9 +5,9 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import 'typeface-roboto';
 
 import ColorListItem from './ColorListItem';
-import SearchBox from './SearchBox';
+import WebSearchBox from './WebSearchBox';
 import * as serviceWorker from './serviceWorker';
-import { ColorsProvider } from './Colors';
+import { ColorsProvider, ColorsContext } from './Colors';
 
 const theme = createMuiTheme({
   typography: {
@@ -16,7 +16,7 @@ const theme = createMuiTheme({
   }
 });
 
-const ColorSearchBox = SearchBox(ColorListItem);
+const ColorSearchBox = WebSearchBox(ColorsContext, ColorListItem);
 
 ReactDOM.render(
   <React.Fragment>
