@@ -4,8 +4,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import 'typeface-roboto';
 
+import WebSearchBox from '@search/shared/WebSearchBox';
 import ColorListItem from './ColorListItem';
-import WebSearchBox from './WebSearchBox';
 import * as serviceWorker from './serviceWorker';
 import { ColorsProvider, ColorsContext } from './Colors';
 

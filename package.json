@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "workspaces": [
+    "color_mobile",
+    "color-web",
+    "github-web",
+    "shared"
+  ]
+}

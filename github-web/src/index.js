@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import 'typeface-roboto';
+import WebSearchBox from '@search/shared/WebSearchBox';
 import * as serviceWorker from './serviceWorker';
 
-import WebSearchBox from './WebSearchBox';
 import RepoListItem from './RepoListItem';
 import { GithubProvider, GithubContext } from './Github';
 
