@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import SearchBox from './SearchBox';
+import SearchBox from '@color/shared/SearchBox';
 import MobileSearchInput from './MobileSearchInput';
 import MobileSearchResult from './MobileSearchResult';
 

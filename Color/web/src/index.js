@@ -4,10 +4,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import 'typeface-roboto';
 
-import WebSearchBox from '@search/shared/WebSearchBox';
+import { ColorsProvider, ColorsContext } from '@color/shared/Colors';
+import WebSearchBox from './WebSearchBox';
 import ColorListItem from './ColorListItem';
 import * as serviceWorker from './serviceWorker';
-import { ColorsProvider, ColorsContext } from './Colors';
 
 const theme = createMuiTheme({
   typography: {

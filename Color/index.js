@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { AppRegistry } from 'react-native';
+import { ColorsProvider, ColorsContext } from '@color/shared/Colors';
 import { name as appName } from './app.json';
 
-import { ColorsProvider, ColorsContext } from './src/Colors';
-import ColorListItem from './src/ColorListItem';
-import MobileSearchBox from './src/MobileSearchBox';
+import ColorListItem from './mobile/ColorListItem';
+import MobileSearchBox from './mobile/MobileSearchBox';
 
 const ColorSearchBox = MobileSearchBox(ColorsContext, ColorListItem);
 

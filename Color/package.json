@@ -26,5 +26,9 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "workspaces": [
+    "shared",
+    "web"
+  ]
 }
